@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <!--
+         Customize this policy to fit your own app's needs. For more guidance, see:
+         https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+         Some notes:
+         * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+         * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+         * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+         * Enable inline JS: add 'unsafe-inline' to default-src
+         -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+            <meta name="format-detection" content="telephone=no">
+                <meta name="msapplication-tap-highlight" content="no">
+                    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+                        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css">
+                            <link rel="stylesheet" type="text/css" href="css/index.css">
+                                <link rel="stylesheet" href="jquery.ui.datepicker.mobile.css" />
+                                <title>Save Food</title>
+                                <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+                                <script>
+                                    //reset type=date inputs to text
+                                    $( document ).bind( "mobileinit", function(){
+                                                       $.mobile.page.prototype.options.degradeInputs.date = true;
+                                                       });
+                                    </script>
+                                <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
+                                <script type="text/javscript" src="js/jquery-ui.datepicker.js"></script>
+                                <script type="text/javscript" src="js/jquery.mobile.datepicker.js"></script>
+                                <script type="text/javascript" src="cordova.js"></script>
+                                <script type="text/javascript" src="js/events.js"></script>
+                                <script type="text/javascript" src="js/index.js"></script>
+                                <script type="text/javascript" src="js/database.js"></script>
+                                </head>
+    <body>
+        
+        <!-- Home page starts-->
+        <div data-role="page" id="homePage" class="home_page">
+            <div data-role="header" class="pageHeader">
+                <h2> Save Food </h2>
+                <a href="#" inline="true" class="ui-btn-right" id="addButton"> Add</a>
+            </div>
+            <div data-role="content" data-theme='a' class="home-content" data-postion="fixed">
+            </div>
+        </div>
+        <!-- Home page ends-->
+        <!-- Details page starts-->
+        <div data-role="page" id="detailsPage" class="details_page">
+            <div data-role="header" class="pageHeader">
+                <h2> Add Task </h2>
+                <a href="#" class="ui-btn-left" id="backButton"> Back </a>
+            </div>
+            <div data-role="content">
+                <input type="text" data-clear-btn="true" id="itemText">
+                <a href="#" class="ui-btn" id="scanButton"> Scan </a>
+                <!--                <table>-->
+                <!--                    <tbody>-->
+                <!--                        <tr>-->
+                <!--                            <td>Due date</td>-->
+                <!--                            <td> Date here</td>-->
+                <!--                        </tr>-->
+                <!--                        <tr>-->
+                <!--                            <td>Set Timer</td>-->
+                <!--                            <td input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" id="flip-checkbox-1"></td>-->
+                <!--                        </tr>-->
+                <!--                    </tbody>-->
+                <!--                </table>-->
+                <fieldset>
+                    <div data-role="fieldcontain">
+                        <label> Expiry Date </label>
+                        <label id="expiryDate"> 29/02/2017</label>
+                    </div>
+                </fieldset>
+                <fieldset style="display: none" id="alarmFields">
+                    <div data-role="fieldcontain">
+                        <label for="toggleSwitch">Set Alarm
+                            <select name="toggleSwitch" id="toggleSwitch" data-role="slider">
+                                <option value="off">Off</option>
+                                <option value="on">On</option>
+                            </select>
+                        </label>
+                    </div>
+                </fieldset>
+                <div id="dateInput"> <!--style="display: none" -->
+                    <label for="date"> Reminder Date
+                        <input type="date" name="date" id="date" value="" />
+                    </label>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Details page ends-->
+    </body>
+</html>

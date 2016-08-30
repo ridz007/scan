@@ -1,0 +1,37 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.pepsico.diagnosticQA"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "com.pepsico.diagnosticQA"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.pepsico.diagnosticQA"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.pepsico.diagnosticQA"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.pepsico.diagnosticQA"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.pepsico.diagnosticQA"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.pepsico.diagnosticQA"
+        },
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.pepsico.diagnosticQA"
+        }
+    }
+}
