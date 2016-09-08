@@ -58,11 +58,11 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-compat": "1.0.0",
     "phonegap-plugin-barcodescanner": "6.0.1",
-    "cordova-plugin-console": "1.0.3",
     "cordova-plugin-device": "1.1.2",
     "cordova-plugin-app-event": "1.2.0",
     "de.appplant.cordova.plugin.local-notification": "0.8.4",
-    "cordova-sqlite-storage": "1.4.7"
+    "cordova-sqlite-storage": "1.4.7",
+    "cordova-plugin-console": "1.0.3"
 };
 // BOTTOM OF METADATA
 });

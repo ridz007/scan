@@ -9,22 +9,6 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-console.console",
-        "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
-        "pluginId": "cordova-plugin-console",
-        "clobbers": [
-            "console"
-        ]
-    },
-    {
-        "id": "cordova-plugin-console.logger",
-        "file": "plugins/cordova-plugin-console/www/logger.js",
-        "pluginId": "cordova-plugin-console",
-        "clobbers": [
-            "cordova.logger"
-        ]
-    },
-    {
         "id": "cordova-plugin-device.device",
         "file": "plugins/cordova-plugin-device/www/device.js",
         "pluginId": "cordova-plugin-device",
@@ -66,6 +50,22 @@ module.exports = [
         "clobbers": [
             "SQLitePlugin"
         ]
+    },
+    {
+        "id": "cordova-plugin-console.console",
+        "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
+        "pluginId": "cordova-plugin-console",
+        "clobbers": [
+            "console"
+        ]
+    },
+    {
+        "id": "cordova-plugin-console.logger",
+        "file": "plugins/cordova-plugin-console/www/logger.js",
+        "pluginId": "cordova-plugin-console",
+        "clobbers": [
+            "cordova.logger"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -73,11 +73,11 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.2.2",
     "phonegap-plugin-barcodescanner": "6.0.1",
-    "cordova-plugin-console": "1.0.3",
     "cordova-plugin-device": "1.1.2",
     "cordova-plugin-app-event": "1.2.0",
     "de.appplant.cordova.plugin.local-notification": "0.8.4",
-    "cordova-sqlite-storage": "1.4.7"
+    "cordova-sqlite-storage": "1.4.7",
+    "cordova-plugin-console": "1.0.3"
 };
 // BOTTOM OF METADATA
 });

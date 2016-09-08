@@ -18,44 +18,49 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
+initialize: function() {
+    this.bindEvents();
+},
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
+bindEvents: function() {
+    document.addEventListener('deviceready', this.onDeviceReady, false);
+    window.sqlitePlugin.echoTest(function() {
+                                 console.log('ECHO test OK');
+                                 });
+},
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        //app.receivedEvent('deviceready');
-        console.log("deviceready");
-        var info = null;
-                                  if(!localStorage.getItem("rp_data"))
-                                  {
-                                  var rp_data = {data: []};
-                                  localStorage.setItem("rp_data", JSON.stringify(rp_data));
-                                  }
-                                  info = JSON.parse(localStorage.getItem("rp_data"));
-        Database.openDatabase();
-        //called databse to open
-        },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-      var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+onDeviceReady: function() {
+    //app.receivedEvent('deviceready');
+    console.log("deviceready");
+    var info = null;
+    if(!localStorage.getItem("rp_data"))
+    {
+        var rp_data = {data: []};
+        localStorage.setItem("rp_data", JSON.stringify(rp_data));
     }
+    info = JSON.parse(localStorage.getItem("rp_data"));
+    Database.openDatabase();
+//    Database.createTables(); //called from opendatabase itself
+    //Event.fetchAddedItemFromDB();
+    //called databse to open
+},
+    // Update DOM on a Received Event
+receivedEvent: function(id) {
+    var parentElement = document.getElementById(id);
+    var listeningElement = parentElement.querySelector('.listening');
+    var receivedElement = parentElement.querySelector('.received');
+    
+    listeningElement.setAttribute('style', 'display:none;');
+    receivedElement.setAttribute('style', 'display:block;');
+    
+    console.log('Received Event: ' + id);
+}
 };
 
 app.initialize();

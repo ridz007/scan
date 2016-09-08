@@ -47,9 +47,13 @@
                                 <script type="text/javscript" src="js/jquery-ui.datepicker.js"></script>
                                 <script type="text/javscript" src="js/jquery.mobile.datepicker.js"></script>
                                 <script type="text/javascript" src="cordova.js"></script>
+                                <script type="text/javascript" charset="utf-8" src="SQLitePlugin.js"></script>
+                                <script type="text/javasript" src= "js/mustache.js"></script>
+                                <script type="text/javascript" src="js/utility.js"></script>
+                                <script type="text/javascript" src="js/databaseObjects.js"></script>
+                                <script type="text/javascript" src="js/database.js"></script>
                                 <script type="text/javascript" src="js/events.js"></script>
                                 <script type="text/javascript" src="js/index.js"></script>
-                                <script type="text/javascript" src="js/database.js"></script>
                                 </head>
     <body>
         
@@ -60,6 +64,18 @@
                 <a href="#" inline="true" class="ui-btn-right" id="addButton"> Add</a>
             </div>
             <div data-role="content" data-theme='a' class="home-content" data-postion="fixed">
+                <script id="savedItems" type="text/template">
+                    {{#temp}}
+                    <div class="ui-grid-b">
+                    <div class="ui-block-a"> {{id}}
+                    </div>
+                    <div class="ui-block-b"> {{taskName}}
+                    </div>
+                    <div class="ui-block-c"> {{expiryDate}}
+                    </div>
+                    </div>
+                    {{/temp}}
+                </script>
             </div>
         </div>
         <!-- Home page ends-->
@@ -68,6 +84,7 @@
             <div data-role="header" class="pageHeader">
                 <h2> Add Task </h2>
                 <a href="#" class="ui-btn-left" id="backButton"> Back </a>
+                <a href="#" class="ui-btn-right" id="doneButton"> Done </a>
             </div>
             <div data-role="content">
                 <input type="text" data-clear-btn="true" id="itemText">
@@ -87,7 +104,7 @@
                 <fieldset>
                     <div data-role="fieldcontain">
                         <label> Expiry Date </label>
-                        <label id="expiryDate"> 29/02/2017</label>
+                        <label id="expiryDate"></label>
                     </div>
                 </fieldset>
                 <fieldset style="display: none" id="alarmFields">

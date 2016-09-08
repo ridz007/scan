@@ -13,10 +13,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
                             "count": 1
                         },
@@ -26,6 +22,10 @@
                         },
                         {
                             "xml": "<feature name=\"SQLitePlugin\"><param name=\"ios-package\" value=\"SQLitePlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -40,9 +40,6 @@
         "phonegap-plugin-barcodescanner": {
             "PACKAGE_NAME": "com.pepsico.diagnosticQA"
         },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.pepsico.diagnosticQA"
-        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.pepsico.diagnosticQA"
         },
@@ -54,6 +51,9 @@
         },
         "cordova-sqlite-storage": {
             "PACKAGE_NAME": "com.pepsico.diagnosticQA"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.pepsico.diagnosticQA"
         }
     },
     "dependent_plugins": {},
@@ -64,22 +64,6 @@
             "pluginId": "phonegap-plugin-barcodescanner",
             "clobbers": [
                 "cordova.plugins.barcodeScanner"
-            ]
-        },
-        {
-            "id": "cordova-plugin-console.console",
-            "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
-            "pluginId": "cordova-plugin-console",
-            "clobbers": [
-                "console"
-            ]
-        },
-        {
-            "id": "cordova-plugin-console.logger",
-            "file": "plugins/cordova-plugin-console/www/logger.js",
-            "pluginId": "cordova-plugin-console",
-            "clobbers": [
-                "cordova.logger"
             ]
         },
         {
@@ -124,15 +108,31 @@
             "clobbers": [
                 "SQLitePlugin"
             ]
+        },
+        {
+            "id": "cordova-plugin-console.console",
+            "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
+            "pluginId": "cordova-plugin-console",
+            "clobbers": [
+                "console"
+            ]
+        },
+        {
+            "id": "cordova-plugin-console.logger",
+            "file": "plugins/cordova-plugin-console/www/logger.js",
+            "pluginId": "cordova-plugin-console",
+            "clobbers": [
+                "cordova.logger"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.2.2",
         "phonegap-plugin-barcodescanner": "6.0.1",
-        "cordova-plugin-console": "1.0.3",
         "cordova-plugin-device": "1.1.2",
         "cordova-plugin-app-event": "1.2.0",
         "de.appplant.cordova.plugin.local-notification": "0.8.4",
-        "cordova-sqlite-storage": "1.4.7"
+        "cordova-sqlite-storage": "1.4.7",
+        "cordova-plugin-console": "1.0.3"
     }
 }

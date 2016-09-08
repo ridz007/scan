@@ -23,14 +23,6 @@
         "is_top_level": false,
         "variables": {}
     },
-    "cordova-plugin-console": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-console"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "de.appplant.cordova.plugin.local-notification": {
         "source": {
             "type": "git",
@@ -60,6 +52,14 @@
         "source": {
             "type": "registry",
             "id": "cordova-sqlite-storage"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-console": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-console"
         },
         "is_top_level": true,
         "variables": {}

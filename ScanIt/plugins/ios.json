@@ -13,13 +13,13 @@
         "phonegap-plugin-barcodescanner": {
             "PACKAGE_NAME": "com.pepsico.diagnosticQA"
         },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.pepsico.diagnosticQA"
-        },
         "de.appplant.cordova.plugin.local-notification": {
             "PACKAGE_NAME": "com.pepsico.diagnosticQA"
         },
         "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.pepsico.diagnosticQA"
+        },
+        "cordova-plugin-console": {
             "PACKAGE_NAME": "com.pepsico.diagnosticQA"
         }
     },
